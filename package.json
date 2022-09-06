@@ -3,5 +3,14 @@
   "version": "0.1.0",
   "engines": {
     "node": ">=16.x"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  
+
+  "author": "Joselyn Condori Cabrera",
+  "dependencies": {
+    "node-fetch": "^2.6.7"
   }
 }
