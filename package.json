@@ -5,12 +5,20 @@
     "node": ">=16.x"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node api.js"
   },
-  
-
   "author": "Joselyn Condori Cabrera",
+  "license": "ISC",
+  "bin": {
+    "md-links": "./cli.js"
+  },
   "dependencies": {
+    "colors": "^1.4.0",
     "node-fetch": "^2.6.7"
+  },
+  "devDependencies": {
+    "eslint": "^8.23.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0"
   }
 }
