@@ -10,6 +10,7 @@ const validatePath = (route) => {
   return undefined;
 };
 // console.log(validatePath('thumb.png'));
+// console.log(typeof validatePath);
 
 // convertir a ruta absoluta
 const convertRouteAbsolute = (route) => {
@@ -19,7 +20,7 @@ const convertRouteAbsolute = (route) => {
   }
   return path.resolve(route);
 };
-// console.log(convertRouteAbsolute('prueba1.md'));
+// console.log(convertRouteAbsolute('./nuevoReadme.md'));
 
 // verificar si es directorio
 // const r = 'C:/Users/USER/LABORATORIA_LIM018/LIM018-md-links/carpeta';
@@ -119,6 +120,7 @@ const getFileOfDirectory = (route) => {
   });
   return arrayFile;
 };
+// console.log(getFileOfDirectory('./carpeta'));
 
 // obtener archivos md
 const searchFileMd = (arrayFiles) => {
@@ -156,7 +158,7 @@ const notValidateArrayMd = (route) => {
   const nuvArrayMd = arrayMd.map((e) => notValidateLink(e));
   return nuvArrayMd;
 };
-// console.log(notValidateArrayMd('carpeta'));
+// console.log(notValidateArrayMd('./carpetaprueba'));
 
 module.exports = {
   isFileMd,
