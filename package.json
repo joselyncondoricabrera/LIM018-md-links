@@ -1,6 +1,6 @@
 {
   "name": "md-links-joselyn-danitza",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "engines": {
     "node": ">=16.x"
   },
@@ -8,7 +8,7 @@
     "start": "node api_utils.js",
     "test": "jest --coverage"
   },
-  "author": "Joselyn Condori Cabrera",
+  "author": "Joselyn Condori Cabrera (https://github.com/joselyncondoricabrera/LIM018-md-links)",
   "description": "Libreria que permite leer archivo MarkDown, captura los links y verifica cuales funcionan",
   "license": "ISC",
   "bin": {
