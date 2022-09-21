@@ -103,12 +103,16 @@ const notValidateLink = (route) => {
 const validateLink = (route) => {
   const arrayObjectLink = notValidateLink(route);
   const newArrayLink = arrayObjectLink.map((e) => fetch(e.href)
-    .then((res) => ({ ...e, status: res.status, ok: res.status >= 400 ? 'fail' : 'ok' })));
+    .then((res) => ({ ...e, status: res.status, ok: res.status >= 400 ? 'fail' : 'ok' }))
+    .catch(() => ({ ...e, status: 'link roto', ok: 'fail' })));
   return Promise.all(newArrayLink);
 };
 
-/* validateLink('nuevoReadme.md')
-    .then((res) => (console.log(res))); */
+/* validateLink('README.md')
+  .then((res) => (console.log(res)))
+  .catch((er) => {
+    console.log(er);
+  }); */
 
 // hacer recursividad-recorrer directorios
 const arrayFile = [];

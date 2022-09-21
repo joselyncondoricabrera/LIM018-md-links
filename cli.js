@@ -19,10 +19,13 @@ switch (arrayArgs.length) {
     break;
   case 1:
     if (arrayArgs[0] === '--help') {
-      console.log('-----------*******----------*******----------*******--------*******-------'.blue);
+      console.log('--------------------------------------------------------------------------'.magenta);
       console.log('***************** "MD-LINKS" - Joselyn Condori Cabrera ******************'.magenta);
-      console.log('-----------*******----------*******----------*******--------*******-------'.blue);
-      console.log(colors.magenta(`Comandos válidos para esta libreria:
+      console.log('--------------------------------------------------------------------------'.magenta);
+      console.log(colors.cyan(`
+      Formato  para colocar en la terminal ---> md-links /Path/ /comando/
+
+      Comandos válidos para esta libreria:
     1. Path -> Permite Obtener información del links encontrados, retorna:
         md-links ./some/example.md
         Href:Url del link
@@ -136,13 +139,13 @@ switch (arrayArgs.length) {
     }
     break;
   case 3:
-    if (args[1] === '--stats' && args[2] === '--validate') {
+    if ((args[1] === '--stats' && args[2] === '--validate') || (args[1] === '--validate' && args[2] === '--stats')) {
       const arrayLinksOfFile = [];
       mdLinks(args[0], { validate: true })
         .then((res) => {
           console.log(`
             ┌───────────────────────************──────────────────────┐
-              *********LINKS ÚNICOS Y ROTOS DE CADA ARCHIVO MD*******
+              ********    LINKS ÚNICOS Y ROTOS ENCONTRADOS   *******
             └───────────────────────************──────────────────────┘\n`.magenta);
           let route = ' ';
           let acumLinkFail = 0;
