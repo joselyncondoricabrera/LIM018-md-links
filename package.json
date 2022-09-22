@@ -1,9 +1,14 @@
 {
   "name": "md-links-joselyn-danitza",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "engines": {
     "node": ">=16.x"
   },
+ "repository": {
+  "type": "git",
+  "url":"https://github.com/joselyncondoricabrera/LIM018-md-links"
+ },
+
   "scripts": {
     "start": "node api_utils.js",
     "test": "jest --coverage"
