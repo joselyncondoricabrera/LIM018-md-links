@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 // const { mdLinks } = require('../api');
 const fetch = require('node-fetch');
 
@@ -16,7 +17,7 @@ const {
   searchFileMd,
   notValidateArrayMd,
   validateLink,
-  validateArrayMd,
+// validateArrayMd,
 } = require('../api_utils');
 
 describe('validatePath', () => {
@@ -101,9 +102,6 @@ describe('existDatainFile', () => {
   it('"./nuevoReadme.md", debería tener data', () => {
     expect(existDatainFile('./nuevoReadme.md')).toEqual('./nuevoReadme.md');
   });
-  /* it('"./nuevo.md", no debería tener data', () => {
-    expect(existDatainFile('./nuevo.md')).toEqual(undefined);
-  }); */
 });
 
 describe('foundLinksText', () => {
@@ -144,7 +142,7 @@ describe('notValidateLink', () => {
   });
 });
 
-/* describe('getFileOfDirectory', () => {
+describe('getFileOfDirectory', () => {
   it('Debería ser una función', () => {
     expect(typeof getFileOfDirectory).toBe('function');
   });
@@ -348,9 +346,9 @@ describe('notValidateArrayMd', () => {
 
     expect(notValidateArrayMd('./carpeta')).toEqual(arrayMdFolder);
   });
-}); */
+});
 
-/* describe('funcion validar link fetch', () => {
+describe('funcion validar link fetch', () => {
   it('Debería retornar links validados con status', (done) => {
     fetch.mockResolvedValueOnce({ status: 200 });
     fetch.mockResolvedValueOnce({ status: 200 });
@@ -378,150 +376,10 @@ describe('notValidateArrayMd', () => {
         done();
       });
   });
-}); */
-describe('validateArrayMd 2', () => {
-  const array = [
-    [
-      {
-        href: 'https://es.wikipedia.org/wiki/Markdown',
-        text: 'Markdown',
-        path: 'C:\\Users\\USER\\LABORATORIA_LIM018\\LIM018-md-links\\carpeta\\carpeta2\\prueba21.md',
-        status: 200,
-        ok: 'ok'
-      },
-      {
-        href: 'https://nodejs.org/',
-        text: 'Node.js',
-        path: 'C:\\Users\\USER\\LABORATORIA_LIM018\\LIM018-md-links\\carpeta\\carpeta2\\prueba21.md',
-        status: 200,
-        ok: 'ok'
-      },
-      {
-        href: 'https://user-images.githubusercontent.com/110297/42118443-b7a5f1f0-7bc8-11e8-96ad-9cc5593715a6.jpg',
-        text: 'md-links',
-        path: 'C:\\Users\\USER\\LABORATORIA_LIM018\\LIM018-md-links\\carpeta\\carpeta2\\prueba21.md',
-        status: 200,
-        ok: 'ok'
-      },
-      {
-        href: 'https://nodejs.org/es/',
-        text: 'Node.js',
-        path: 'C:\\Users\\USER\\LABORATORIA_LIM018\\LIM018-md-links\\carpeta\\carpeta2\\prueba21.md',
-        status: 200,
-        ok: 'ok'
-      },
-      {
-        href: 'https://developers.google.com/v8/',
-        text: 'motor de JavaScript V8 de Chrome',
-        path: 'C:\\Users\\USER\\LABORATORIA_LIM018\\LIM018-md-links\\carpeta\\carpeta2\\prueba21.md',
-        status: 200,
-        ok: 'ok'
-      }
-    ],
-    [
-      {
-        href: 'https://es.wikipedia.org/wiki/Markdown',
-        text: 'Markdown',
-        path: 'C:\\Users\\USER\\LABORATORIA_LIM018\\LIM018-md-links\\carpeta\\carpeta3\\prueba3.md',
-        status: 200,
-        ok: 'ok'
-      }
-    ],
-    [
-      {
-        href: 'https://curriculum.laboratoria.la/es/topics/javascript/04-arrays',
-        text: 'Arreglos',
-        path: 'C:\\Users\\USER\\LABORATORIA_LIM018\\LIM018-md-links\\carpeta\\prueba1.md',          
-        status: 200,
-        ok: 'ok',
-      },
-      {
-        href: 'https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/',
-        text: 'Array - MDN',
-        path: 'C:\\Users\\USER\\LABORATORIA_LIM018\\LIM018-md-links\\carpeta\\prueba1.md',          
-        status: 200,
-        ok: 'ok'
-      },
-      {
-        href: 'https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/sort',
-        text: 'Array.prototype.sort() - MDN',
-        path: 'C:\\Users\\USER\\LABORATORIA_LIM018\\LIM018-md-links\\carpeta\\prueba1.md',          
-        status: 200,
-        ok: 'ok'
-      },
-      {
-        href: 'https://neoattack.com/proyectos/',
-        text: 'neoattack',
-        path: 'C:\\Users\\USER\\LABORATORIA_LIM018\\LIM018-md-links\\carpeta\\prueba1.md',          
-        status: 404,
-        ok: 'fail'
-      },
-      {
-        href: 'https://www.pixar.com/error404',
-        text: 'nuevo link',
-        path: 'C:\\Users\\USER\\LABORATORIA_LIM018\\LIM018-md-links\\carpeta\\prueba1.md',          
-        status: 404,
-        ok: 'fail'
-      }
-    ],
-    [
-      {
-        href: 'https://nodejs.org/es/',
-        text: 'Node.js',
-        path: 'C:\\Users\\USER\\LABORATORIA_LIM018\\LIM018-md-links\\carpeta\\prueba2.md',          
-        status: 200,
-        ok: 'ok'
-      },
-      {
-        href: 'https://developers.google.com/v8/',
-        text: 'motor de JavaScript V8 de Chrome',
-        path: 'C:\\Users\\USER\\LABORATORIA_LIM018\\LIM018-md-links\\carpeta\\prueba2.md',          
-        status: 200,
-        ok: 'ok'
-      },
-      {
-        href: 'https://developers.google.com/v8/',
-        text: 'motor de JavaScript V8 de Chrome',
-        path: 'C:\\Users\\USER\\LABORATORIA_LIM018\\LIM018-md-links\\carpeta\\prueba2.md',          
-        status: 200,
-        ok: 'ok'
-      },
-      {
-        href: 'https://neoattack.com/proyectos/',
-        text: 'neoattack',
-        path: 'C:\\Users\\USER\\LABORATORIA_LIM018\\LIM018-md-links\\carpeta\\prueba2.md',          
-        status: 404,
-        ok: 'fail'
-      }
-    ]
-  ];
-  it('directorio validado', (done) => {
-    fetch.mockResolvedValueOnce({ status: 200 });
-    fetch.mockResolvedValueOnce({ status: 200 });
-    fetch.mockResolvedValueOnce({ status: 200 });
-    fetch.mockResolvedValueOnce({ status: 200 });
-    fetch.mockResolvedValueOnce({ status: 200 });
-    fetch.mockResolvedValueOnce({ status: 200 });
-    fetch.mockResolvedValueOnce({ status: 200 });
-    fetch.mockResolvedValueOnce({ status: 200 });
-    fetch.mockResolvedValueOnce({ status: 200 });
-    fetch.mockResolvedValueOnce({ status: 404 });
-    fetch.mockResolvedValueOnce({ status: 404 });
-    fetch.mockResolvedValueOnce({ status: 200 });
-    fetch.mockResolvedValueOnce({ status: 200 });
-    fetch.mockResolvedValueOnce({ status: 200 });
-    fetch.mockResolvedValueOnce({ status: 404 });
-
-    validateArrayMd('./carpeta')
-      .then((res) => {
-        expect(res).toEqual(array);
-        done();
-      });
-  });
 });
 
 /* describe('validateArrayMd', () => {
-  const array = [
+  /* const array = [
     [
       {
         href: 'https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce',
@@ -550,15 +408,19 @@ describe('validateArrayMd 2', () => {
       },
     ],
   ];
-  it('directorio validado', (done) => {
+  it('directorio validado', () => {
     fetch.mockResolvedValueOnce({ status: 200 });
     fetch.mockResolvedValueOnce({ status: 200 });
     fetch.mockResolvedValueOnce({ status: 200 });
 
-    validateArrayMd('./carpetaprueba')
+     validateArrayMd('./carpetaprueba')
       .then((res) => {
         expect(res).toEqual(array);
         done();
+      });
+    validateArrayMd('./carpetaprueba')
+      .then((res) => {
+        console.log(res);
       });
   });
 }); */
