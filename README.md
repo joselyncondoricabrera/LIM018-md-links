@@ -13,17 +13,17 @@
 ## 1. Descripción de la librería
 md-links-joselyn-danitza es una librería desarrollada en Javascript y Node.js, permite realizar lecturas de archivos Marckdown para detectar la cantidad de links  y detalle de algunas estadísticas básicas de lo hallado en cada archivo. Detecta a tiempo los enlaces rotos dentro de tu archivo para que puedas eliminarlos, instala está librería y descubre!!
 
-![marckdown](../image/marckdown.jpg)
+![marckdown](./image/marckdown.jpg)
 
 ## 2. Diagrama de flujo
-Se desarrollo de la librería se trabajo de la siguiente manera:
+El desarrollo de la librería se trabajó de la siguiente manera:
 
-![flujograma](../image/md-links-diagrama.png)
+![flujograma](./image/md-links-diagrama.png)
 
 ## 3. Guía de uso
 Instala la librería colocando el siguiente comando en tu terminal:
 
-![comando](../image/install-mdlinks.png)
+![comando](./image/install-mdlinks.png)
 
 ## 4. Ejemplos de aplicación
 
