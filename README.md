@@ -6,7 +6,8 @@
 * [2. Diagrama de flujo](#2-Diagrama-de-flujo)
 * [3. Instalar librería](#3-Instalar-librería)
 * [4. Ejemplos de aplicación](#4-Ejemplos-de-aplicación)
-* [5. Developer](#5-Developer)
+* [5. Detalle de las propiedades](#5-Detalle-de-las-propiedades)
+* [6. Developer](#6-Developer)
 
 ***
 
@@ -28,71 +29,30 @@ Instala la librería colocando el siguiente comando en tu terminal:
 ## 4. Ejemplos de aplicación
 ### Caso 1: solo coloca una ruta
 `md-links <path-to-file/directory>`
+
 ![caso1](./image/caso1.png)
 
 ### Caso 2: Coloca ruta y validate
 `md-links <path-to-file/directory> --validate`
+
 ![caso2](./image/caso2.png)
 
 ### Caso 3: Coloca ruta, validate y stats
 `md-links <path-to-file/directory> --validate --stats`
+
 ![caso3](./image/caso3.png)
 
 ### Caso 4: No coloque ningún argumento
 `md-links`
+
 ![caso4](./image/caso4.png)
 
-
-## 5. Developer
-### Joselyn Danitza Condori Cabrera
-
-
-### Archivos del proyecto
-
-* `README.md` con descripción del módulo, instrucciones de instalación/uso,
-  documentación del API y ejemplos. Todo lo relevante para que cualquier
-  developer que quiera usar tu librería pueda hacerlo sin inconvenientes.
-* `index.js`: Desde este archivo debes exportar **una** función (`mdLinks`).
-* 
-
-## Este proyecto consta de DOS partes
-
-### 1) JavaScript API
-
-El módulo debe poder **importarse** en otros scripts de Node.js y debe ofrecer la
-siguiente interfaz:
-
-#### `mdLinks(path, options)`
-
-##### Argumentos
-
-* `path`: Ruta **absoluta** o **relativa** al **archivo** o **directorio**.
-Si la ruta pasada es relativa, debe resolverse como relativa al directorio
-desde donde se invoca node - _current working directory_).
-* `options`: Un objeto con **únicamente** las siguientes propiedades:
-  - `validate`: Booleano que determina si se desea validar los links
-    encontrados.
-  - `stats`: Booleano que determina si se desea obtener un output
-    con información estadística general.
-
-##### Valor de retorno
-
-La función debe **retornar una promesa** (`Promise`) que **resuelva a un arreglo**
-(`Array`) de objetos (`Object`), donde cada objeto representa un link y contiene
-las siguientes propiedades
-
-Con `validate:false` :
-
-* `href`: URL encontrada.
-* `text`: Texto que aparecía dentro del link (`<a>`).
-* `file`: Ruta del archivo donde se encontró el link.
-
-Con `validate:true` :
-
+## 5. Detalle de las propiedades
 * `href`: URL encontrada.
 * `text`: Texto que aparecía dentro del link (`<a>`).
 * `file`: Ruta del archivo donde se encontró el link.
 * `status`: Código de respuesta HTTP.
 * `ok`: Mensaje `fail` en caso de fallo u `ok` en caso de éxito.
 
-#### Ejemplo (resultados como comentarios)
+## 6. Developer
+### Joselyn Danitza Condori Cabrera
